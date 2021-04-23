@@ -1,0 +1,24 @@
+uuid: 946e91a4-f08d-48d3-b890-18170a21a24d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.field_c_a_components
+    - field.field.node.article.field_c_a_postcode
+    - node.type.article
+  module:
+    - user
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_c_a_components: true
+  field_c_a_postcode: true

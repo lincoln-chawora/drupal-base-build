@@ -1,0 +1,44 @@
+uuid: bd6d3b5c-4dac-4c6e-a395-1c46938e13b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_c_a_components
+    - node.type.article
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.article.field_c_a_components
+field_name: field_c_a_components
+entity_type: node
+bundle: article
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      call_to_action: call_to_action
+      image: image
+      wysiwyg: wysiwyg
+    target_bundles_drag_drop:
+      call_to_action:
+        enabled: true
+        weight: 4
+      image:
+        enabled: true
+        weight: 5
+      weather_finder:
+        weight: 7
+        enabled: false
+      wysiwyg:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

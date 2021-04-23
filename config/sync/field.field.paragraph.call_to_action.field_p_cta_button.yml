@@ -1,0 +1,23 @@
+uuid: b2ba7763-0c84-4473-8338-a649ede7f450
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_cta_button
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - link
+id: paragraph.call_to_action.field_p_cta_button
+field_name: field_p_cta_button
+entity_type: paragraph
+bundle: call_to_action
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
