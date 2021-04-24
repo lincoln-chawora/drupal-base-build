@@ -92,11 +92,14 @@
   </div>
 
   {% if not node.field_c_a_address.isEmpty() %}
-    <div style="display: flex;align-items: center;">
-      <div>The current weather at <strong>{{ node.field_c_a_address.value[0].postal_code }}</strong> in {{ weather_widget_data.location.name }} is {{ weather_widget_data.current.condition.text }} right now.</div>
-      {% if weather_widget_data.current.condition.icon %}
-        <img src='{{ weather_widget_data.current.condition.icon }}' alt="Weather icon" border="0">
-      {% endif %}
+    <div style="display: flex;flex-direction: column;background: #ececec;padding: 16px;">
+      <h3><strong>Region weather</strong></h3>
+      <div style="display: flex;align-items: center;">
+        <div>The current weather at <strong>{{ node.field_c_a_address.value[0].postal_code }}</strong> in {{ weather_widget_data.location.name }} is {{ weather_widget_data.current.condition.text }} right now.</div>
+        {% if weather_widget_data.current.condition.icon %}
+          <img src='{{ weather_widget_data.current.condition.icon }}' alt="Weather icon" border="0">
+        {% endif %}
+      </div>
     </div>
   {% endif %}
 </article>
