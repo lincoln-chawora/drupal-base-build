@@ -1,0 +1,5 @@
+name: Xyfer
+type: theme
+description: 'A custom theme for Lincoln Batsirayi Chawora'
+core_version_requirement: ^9.0
+base theme: bartik
