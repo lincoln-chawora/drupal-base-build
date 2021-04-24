@@ -3,10 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.article.field_c_a_address
     - field.field.node.article.field_c_a_components
-    - field.field.node.article.field_c_a_postcode
     - node.type.article
   module:
+    - address
     - paragraphs
     - path
 id: node.article.default
@@ -20,6 +21,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_c_a_address:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
   field_c_a_components:
     type: entity_reference_paragraphs
     weight: 122
@@ -31,14 +38,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_c_a_postcode:
-    weight: 123
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   path:
     type: path
