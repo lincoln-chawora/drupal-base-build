@@ -1,0 +1,4 @@
+services:
+  xyfer_weather_api:region_weather:
+    class: Drupal\xyfer_weather_api\Controller\RegionWeather
+    arguments: [ '@http_client', '@serialization.json' ]
