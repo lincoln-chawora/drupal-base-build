@@ -1,0 +1,20 @@
+uuid: ddc5a5eb-a44e-468a-be36-3b7072e1539a
+langcode: en
+status: false
+dependencies:
+  theme:
+    - xyfer
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: xyfer_page_title
+theme: xyfer
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

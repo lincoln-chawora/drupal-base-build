@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "drupal/address": "^1.9",
         "drupal/admin_toolbar": "^3.0",
         "drupal/chosen": "^3.0",
         "drupal/config_split": "^1.7",

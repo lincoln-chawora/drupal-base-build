@@ -1,0 +1,23 @@
+uuid: 86c73fe5-5a2a-4754-b406-429365ecbd8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - xyfer
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: xyfer_search
+theme: xyfer
+region: header
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility: {  }
