@@ -1,0 +1,6 @@
+xyfer_weather_api.admin_settings_form:
+  title: 'Xyfer Weather API configuration'
+  route_name: xyfer_weather_api.admin_settings_form
+  description: 'Weather api related config'
+  parent: system.admin_config_system
+  weight: 99

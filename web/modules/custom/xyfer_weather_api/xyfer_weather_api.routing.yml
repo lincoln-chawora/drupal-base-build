@@ -1,0 +1,7 @@
+xyfer_weather_api.admin_settings_form:
+  path: '/admin/config/xyfer-weather/settings'
+  defaults:
+    _form: '\Drupal\xyfer_weather_api\Form\XyferWeatherForm'
+    _title: 'Xyfer Weather API Form'
+  requirements:
+    _access: 'TRUE'
