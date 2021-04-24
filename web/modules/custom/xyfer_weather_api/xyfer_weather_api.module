@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function xyfer_weather_api_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  if (isset($node->get('field_c_a_address')->getValue()[0]['postal_code']) && $variables['view_mode'] === 'full') {
+    $weather = \Drupal::service('xyfer_weather_api:region_weather');
+    $postcode = $node->get('field_c_a_address')->getValue()[0]['postal_code'];
+    // Get weather data based on provided postcode using region_weather
+    // service.
+    $data = $weather->getRegionWeather($postcode);
+    if (isset($data)) {
+      $variables['weather_widget_data'] = $data;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function xyfer_weather_api_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_article_edit_form' || $form_id === 'node_article_form') {
+    // If the current user does not have the administrator role, description
+    // text will be added to title field.
+    $user_roles = \Drupal::currentUser()->getRoles();
+    if (!in_array('administrator', $user_roles)) {
+      $form['title']['widget'][0]['value']['#description'] = t('Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+    }
+  }
+}

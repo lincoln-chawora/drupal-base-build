@@ -1,0 +1,5 @@
+type: module
+name: 'Xyfer Weather API'
+description: 'Weather API related module.'
+core_version_requirement: ^9.0
+package: custom

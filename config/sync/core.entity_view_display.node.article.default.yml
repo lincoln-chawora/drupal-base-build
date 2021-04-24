@@ -3,10 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.article.field_c_a_address
     - field.field.node.article.field_c_a_components
-    - field.field.node.article.field_c_a_postcode
     - node.type.article
   module:
+    - address
     - entity_reference_revisions
     - user
 id: node.article.default
@@ -14,22 +15,21 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
+  field_c_a_address:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
   field_c_a_components:
     type: entity_reference_revisions_entity_view
     weight: 2
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_c_a_postcode:
-    weight: 1
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   links:
     weight: 0
