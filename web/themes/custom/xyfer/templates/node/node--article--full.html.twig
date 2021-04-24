@@ -84,12 +84,19 @@
     {{ title_prefix }}
       <h1{{ title_attributes.addClass('node__title') }}>{{ label }}</h1>
     {{ title_suffix }}
-
-    {% if not node.field_c_a_address.isEmpty() %}
-      <div>The current weather at <strong>{{ node.field_c_a_address.value[0].postal_code }}</strong> in {{ weather_widget_data.location.name }} is {{ weather_widget_data.current.condition.text }} right now.</div>
-    {% endif %}
+    <div>Area postcode: {{ node.field_c_a_address.value[0].postal_code }}</div>
   </header>
+
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content.field_c_a_components }}
+    {{ content|without('field_c_a_address') }}
   </div>
+
+  {% if not node.field_c_a_address.isEmpty() %}
+    <div style="display: flex;align-items: center;">
+      <div>The current weather at <strong>{{ node.field_c_a_address.value[0].postal_code }}</strong> in {{ weather_widget_data.location.name }} is {{ weather_widget_data.current.condition.text }} right now.</div>
+      {% if weather_widget_data.current.condition.icon %}
+        <img src='{{ weather_widget_data.current.condition.icon }}' alt="Weather icon" border="0">
+      {% endif %}
+    </div>
+  {% endif %}
 </article>
